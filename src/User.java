@@ -118,7 +118,7 @@ public class User {
 
     public void setIsRegularUser() {
         //סיבוכיות לינארית
-        System.out.println("Are you a real estate agent? Enter - 1, for yes. Or - 2, for no.");
+        System.out.println("Are you a real estate broker? Enter - 1, for yes. Or - 2, for no.");
         int answer;
         do {
             System.out.println("Answer with only 1 or 2: ");

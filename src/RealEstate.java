@@ -38,7 +38,7 @@ public class RealEstate {
         System.out.println("User added successfully!\n");
         this.addUser(user);
     }
-    public void addUser(User user) {
+    private void addUser(User user) {
         //סיבוכיות לינארית
         User[] temp = new User[this.users.length + 1];
         for (int i = 0; i < this.users.length; i++) {
@@ -48,7 +48,7 @@ public class RealEstate {
         this.users = temp;
     }
 
-    public void addProperty(Property property) {
+    private void addProperty(Property property) {
         //סיבוכיות לינארית
         Property[] temp = new Property[this.properties.length + 1];
         for (int i = 0; i < this.properties.length; i++) {
@@ -116,7 +116,7 @@ public class RealEstate {
     }
 
 
-    public boolean maxPropertiesReached(User user) {
+    private boolean maxPropertiesReached(User user) {
         //סיבוכיות לינארית (בגלל מתודת עזר)
         boolean isReached = false;
         boolean isRegularUser = user.getIsRegularUser();
@@ -133,7 +133,7 @@ public class RealEstate {
         return isReached;
     }
 
-    public int countUserProperties(User user) {
+    private int countUserProperties(User user) {
         //סיבוכיות לינארית
         int count = 0;
         for (int i = 0; i < this.properties.length; i++) {
@@ -144,7 +144,7 @@ public class RealEstate {
         return count;
     }
 
-    public City doesCityExists(String cityName) {
+    private City doesCityExists(String cityName) {
         //סיבוכיות לינארית
         City city = null;
         for (int i = 0; i < this.cities.length; i++) {
@@ -159,7 +159,7 @@ public class RealEstate {
         return city;
     }
 
-    public String doesStreetExists(String streetName, City city) {
+    private String doesStreetExists(String streetName, City city) {
         //סיבוכיות לינארית
         String name = "";
         for (int j = 0; j < city.getStreets().length; j++) {
@@ -174,7 +174,7 @@ public class RealEstate {
         return name;
     }
 
-    public Property questionsToProperty(City city, String street, User user, int type) {
+    private Property questionsToProperty(City city, String street, User user, int type) {
         //סיבוכיות קבועה
         int floor = 0;
         if (type == 1 || type == 2) {
@@ -198,17 +198,17 @@ public class RealEstate {
     public void removeProperty(User user) {
         //סיבוכיות לינארית (בגלל מתודת עזר)
         if (this.countUserProperties(user) == 0) {
-            System.out.println("This user has no properties.");
+            System.out.println("This user has no properties.\n");
         } else {
             this.printProperties(user);
             System.out.println("Choose the property you would like to remove according to the list number of it:");
             int index = Main.scanner.nextInt();
             this.removePropertyByIndex(index);
-            System.out.println("Property removed successfully.");
+            System.out.println("Property removed successfully.\n");
         }
     }
 
-    public void removePropertyByIndex(int index) {
+    private void removePropertyByIndex(int index) {
         //סיבוכיות לינארית
         Property[] temp = new Property[this.properties.length - 1];
         int j = 0;
@@ -242,8 +242,8 @@ public class RealEstate {
         System.out.println("Please note, if you are not interested in a specific filter, enter the value -999.");
         System.out.println("Enter 1 for properties that are for rent, or 2 for properties that are for sale:");
         int rent = Main.scanner.nextInt();
-        System.out.println("What type of property? 1 - regular apartment, 2 - penthouse apartment, " +
-                "3 - private house.");
+        System.out.println("What type of property? Enter: 1 - for regular apartment, 2 - for penthouse apartment, " +
+                "3 - for private house.");
         int type = Main.scanner.nextInt();
         System.out.println("How many rooms?");
         int rooms = Main.scanner.nextInt();
@@ -269,7 +269,7 @@ public class RealEstate {
         return properties;
     }
 
-    public Property[] searchRent(Property[] properties, boolean isForRent) {
+    private Property[] searchRent(Property[] properties, boolean isForRent) {
         //סיבוכיות לינארית
         int count = 0;
         for (int i = 0; i < properties.length; i++) {
@@ -288,7 +288,7 @@ public class RealEstate {
         return properties1;
     }
 
-    public Property[] searchType(Property[] properties, int type) {
+    private Property[] searchType(Property[] properties, int type) {
         //סיבוכיות לינארית
         int count = 0;
         for (int i = 0; i < properties.length; i++) {
@@ -307,7 +307,7 @@ public class RealEstate {
         return properties1;
     }
 
-    public Property[] searchRooms(Property[] properties, int rooms) {
+    private Property[] searchRooms(Property[] properties, int rooms) {
         //סיבוכיות לינארית
         int count = 0;
         for (int i = 0; i < properties.length; i++) {
@@ -326,7 +326,7 @@ public class RealEstate {
         return properties1;
     }
 
-    public Property[] searchPrice(Property[] properties, double min, double max) {
+    private Property[] searchPrice(Property[] properties, double min, double max) {
         //סיבוכיות לינארית
         int count = 0;
         for (int i = 0; i < properties.length; i++) {
