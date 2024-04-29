@@ -10,8 +10,8 @@ public class Main {
         User user = new User();
         do {
             System.out.println("choose 1 to create an account: \n"
-                    + "choose 2 to log in: \n" +
-                    "choose 3 to end the program: ");
+                    + "choose 2 to log in: \n"
+                    + "choose 3 to end the program: ");
             choice = scanner.nextInt();
             scanner.nextLine();
             switch (choice) {
@@ -26,11 +26,11 @@ public class Main {
                     do {
                         System.out.println("Choose the action you would like to do: \n"
                                 + "choose 1 to post a new property: \n"
-                                + "choose 2 to remove a property: \n" +
-                                "choose 3 to present all the properties in the system: \n" +
-                                "choose 4 to present all the properties published by your user: \n" +
-                                "choose 5 to search a property according to filters: \n" +
-                                "choose 6 to log out: ");
+                                + "choose 2 to remove a property: \n"
+                                + "choose 3 to present all the properties in the system: \n"
+                                + "choose 4 to present all the properties published by your user: \n"
+                                + "choose 5 to search a property according to filters: \n"
+                                + "choose 6 to log out: ");
                         option = scanner.nextInt();
                         scanner.nextLine();
                         boolean result;
