@@ -3,7 +3,7 @@ public class City {
     private String geographicArea;
     private String[] streets;
 
-    public City(String name, String geographicArea, String[] streets){
+    public City(String name, String geographicArea, String[] streets) {
         //סיבוכיות קבועה
         this.name = name;
         this.geographicArea = geographicArea;
@@ -14,6 +14,7 @@ public class City {
         //סיבוכיות קבועה
         return name;
     }
+
     public String[] getStreets() {
         //סיבוכיות קבועה
         return streets;

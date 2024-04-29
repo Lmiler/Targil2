@@ -3,12 +3,14 @@ public class User {
     private String password;
     private String phoneNumber;
     private boolean isRegularUser;
-    public User (){
+
+    public User() {
         //סיבוכיות קבועה
         this.username = "";
         this.password = "";
         this.phoneNumber = "";
     }
+
     public boolean getIsRegularUser() {
         //סיבוכיות קבועה
         return isRegularUser;
@@ -30,11 +32,12 @@ public class User {
         String username;
         do {
             username = Main.scanner.nextLine();
-        } while (!this.isUsernameTaken(username , realEstate));
+        } while (!this.isUsernameTaken(username, realEstate));
         System.out.println("Username got chosen.\n");
         this.username = username;
     }
-    public boolean isUsernameTaken(String username , RealEstate realEstate) {
+
+    public boolean isUsernameTaken(String username, RealEstate realEstate) {
         //סיבוכיות לינארית
         boolean isTaken = true;
         User[] users = realEstate.getUsers();
@@ -46,6 +49,7 @@ public class User {
         }
         return isTaken;
     }
+
     public void setPassword() {
         //סיבוכיות אקספוננציאלית (בגלל מתודת עזר)
         String password;
@@ -58,6 +62,7 @@ public class User {
         System.out.println("Password got set.\n");
         this.password = password;
     }
+
     public boolean isPasswordStrong(String password) {
         //סיבוכיות אקספוננציאלית
         boolean isStrong = false;
@@ -81,6 +86,7 @@ public class User {
         }
         return isStrong;
     }
+
     public void setPhoneNumber() {
         //סיבוכיות אקספוננציאלית (בגלל מתודת עזר)
         String phoneNumber;
@@ -110,7 +116,7 @@ public class User {
                 }
             }
         }
-        if(!isValid){
+        if (!isValid) {
             System.out.println("Phone number isn't valid.\n");
         }
         return isValid;
@@ -126,7 +132,8 @@ public class User {
         } while (answer != 1 && answer != 2);
         this.isRegularUser = answer == 2;
     }
-    public String toString(){
+
+    public String toString() {
         //סיבוכיות קבועה
         String output = this.username + " " + this.phoneNumber;
         output += this.isRegularUser ? " (regular user)." : " (real estate broker).";

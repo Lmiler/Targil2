@@ -34,13 +34,12 @@ public class Main {
                         option = scanner.nextInt();
                         scanner.nextLine();
                         boolean result;
-                        switch (option){
+                        switch (option) {
                             case 1 -> {
                                 result = realEstate.postNewProperty(user);
-                                if(result){
+                                if (result) {
                                     System.out.println("Property saved successfully.\n");
-                                }
-                                else{
+                                } else {
                                     System.out.println("Property was not saved.\n");
                                 }
                             }
@@ -56,7 +55,7 @@ public class Main {
                                 }
                             }
                         }
-                    } while(option != 6);
+                    } while (option != 6);
                 }
             }
         } while (choice != 3);

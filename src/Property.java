@@ -8,8 +8,9 @@ public class Property {
     private double price;
     private int type;
     private boolean isToRent;
-    public Property(City city , User user, String street, int rooms, int houseNumber, int floorNumber,
-                    double price, int type, boolean isToRent){
+
+    public Property(City city, User user, String street, int rooms, int houseNumber, int floorNumber,
+                    double price, int type, boolean isToRent) {
         //סיבוכיות קבועה
         this.city = city;
         this.user = user;
@@ -21,10 +22,12 @@ public class Property {
         this.type = type;
         this.isToRent = isToRent;
     }
+
     public User getUser() {
         //סיבוכיות קבועה
         return user;
     }
+
     public int getRooms() {
         //סיבוכיות קבועה
         return rooms;
@@ -49,7 +52,7 @@ public class Property {
     public String toString() {
         //סיבוכיות קבועה
         String output = this.city.getName() + " - " + this.street + " " + this.houseNumber + ". \n";
-        switch (this.type){
+        switch (this.type) {
             case 1 -> output += "Regular apartment - ";
             case 2 -> output += "Penthouse apartment - ";
             case 3 -> output += "Private house - ";

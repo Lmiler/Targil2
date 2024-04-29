@@ -38,6 +38,7 @@ public class RealEstate {
         System.out.println("User added successfully!\n");
         this.addUser(user);
     }
+
     private void addUser(User user) {
         //סיבוכיות לינארית
         User[] temp = new User[this.users.length + 1];
@@ -105,8 +106,7 @@ public class RealEstate {
                         isAllowed = true;
                         Property property = questionsToProperty(city, street, user, type);
                         addProperty(property);
-                    }
-                    else{
+                    } else {
                         System.out.println("Not a valid type.");
                     }
                 }
@@ -127,7 +127,7 @@ public class RealEstate {
         if (!isRegularUser && count == 5) {
             isReached = true;
         }
-        if(isReached){
+        if (isReached) {
             System.out.println("This user can not post any more properties - limit reached.");
         }
         return isReached;
